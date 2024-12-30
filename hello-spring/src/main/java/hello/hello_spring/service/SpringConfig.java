@@ -1,5 +1,6 @@
 package hello.hello_spring.service;
 
+import hello.hello_spring.aop.TimeTraceAop;
 import hello.hello_spring.repository.*;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,15 @@ public class SpringConfig {
     public MemberService memberService(){
         return new MemberService(memberRepository); // 스프링 빈에 등록된 memberRepository()를 넣어준다.
     }
+
+    /*
+    // AOP 메서드 빈 등록. AOP 메서드에 컴포넌트를 달아 사용해도 된다.
+    @Bean
+    public TimeTraceAop timeTraceAop(){
+        return new TimeTraceAop();
+    }
+    */
+
 /*
     @Bean
     public MemberRepository memberRepository(){

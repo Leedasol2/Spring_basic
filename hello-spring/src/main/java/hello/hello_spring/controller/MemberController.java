@@ -23,8 +23,9 @@ public class MemberController {
     // DI 방법 3가지
     // 1. 생성자 주입
     @Autowired
-    private MemberController(MemberService memberService) {
+    public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberService = " + memberService.getClass()); // AOP 프록시 주입 확인
     }
 
     /*
